@@ -1,0 +1,14 @@
+---
+# tasks file for telegraf
+
+- name: Set proper ansible_distribution_version for buster/sid
+  set_fact:
+    ansible_distribution_release: "buster"
+  when: ansible_distribution_version == 'buster/sid'
+
+- name: Install the correct repository
+  include_tasks: "Debian.yml"
+  when: ansible_os_family == "Debian"
+
+- name: Configure telegraf
+  include_tasks: "configure.yml"

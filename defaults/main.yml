@@ -1,0 +1,8 @@
+---
+# defaults file for telegraf
+telegraf_agent_output:
+  - type: influxdb
+    config:
+    - urls = ["http://localhost:8086"]
+    - database = "telegraf"
+    - precision = "s"
