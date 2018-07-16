@@ -1,6 +1,7 @@
 dependencies: []
 
 galaxy_info:
+  role_name: telegraf
   author: jniewt
   description: Install and configure telegraf
   license: "license (BSD, MIT)"
