@@ -5,6 +5,16 @@
   tasks:
     - name: Install requirements.yml
       local_action: command ansible-galaxy install -r requirements.yml --ignore-errors
+    - name: Uninstall old docker bindings
+      local_action:
+        module: pip
+        name: docker-py
+        state: absent
+    - name: Install new docker bindings
+      local_action:
+        module: pip
+        name: docker
+        state: present 
 
 - name: Bring up docker container
   hosts: localhost
