@@ -24,7 +24,6 @@
     filename: telegraf
     state: present
   become: yes
-  when: ansible_lsb is not defined or ansible_lsb.codename is not defined
 
 - name: Install telegraf package | Debian
   apt:
